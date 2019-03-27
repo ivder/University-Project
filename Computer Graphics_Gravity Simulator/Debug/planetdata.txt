@@ -1,0 +1,10 @@
+Earth (지구) m=5970 r=12.756
+Venus (금성) m=4870 r=12.104
+Mars (화성) m=642 r=6.792
+Jupiter (목성) m=1898000 r=142.984
+Saturn (토성) m=568000 r=120.536
+Uranus (천왕성) m=86800 r=51.118
+Neptune (해왕성) m=102000 r=49.528
+
+m=mass (질량)
+r=diameter (지름)
