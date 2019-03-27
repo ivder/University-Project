@@ -1,0 +1,716 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+
+namespace Calculator
+{
+    public partial class Form1 : Form
+    {
+        public string value1, op;
+        public bool inputstatus;
+        decimal MemoryStore = 0;
+
+        public Form1()
+        {
+            InitializeComponent();
+            value1 = "";
+            textBox1.ReadOnly = true;
+            textBox1.RightToLeft = RightToLeft.Yes;
+            textBox2.ReadOnly = true;
+           // textBox2.RightToLeft = RightToLeft.Yes;
+            radioButton2.Checked = true;
+        }
+
+        //putting value of button text into text box and a variable inputstatus to textbox
+        #region putting values
+        private void button17_Click(object sender, EventArgs e)  //0
+        {
+            if (inputstatus == true)
+            {
+                textBox1.Text += button17.Text;
+            }
+            else
+            {
+                textBox1.Text = button17.Text;
+                label4.Text = "";
+                inputstatus = true;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)  //1
+        {
+            if (inputstatus == true)
+            {
+                textBox1.Text += button1.Text;
+            }
+            else
+            {
+                textBox1.Text = button1.Text;
+                label4.Text = "";
+                inputstatus = true;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)  //2
+        {
+            if (inputstatus == true)
+            {
+                textBox1.Text += button3.Text;
+            }
+            else
+            {
+                textBox1.Text = button3.Text;
+                label4.Text = "";
+                inputstatus = true;
+            } 
+        }
+
+        private void button2_Click(object sender, EventArgs e)  //3
+        {
+            if (inputstatus == true)
+            {
+                textBox1.Text += button2.Text;
+            }
+            else
+            {
+                textBox1.Text = button2.Text;
+                label4.Text = "";
+                inputstatus = true;
+            } 
+        }
+
+        private void button9_Click(object sender, EventArgs e)  //4
+        {
+            if (inputstatus == true)
+            {
+                textBox1.Text += button9.Text;
+            }
+            else
+            {
+                textBox1.Text = button9.Text;
+                label4.Text = "";
+                inputstatus = true;
+            } 
+        }
+
+        private void button7_Click(object sender, EventArgs e)  //5
+        {
+            if (inputstatus == true)
+            {
+                textBox1.Text += button7.Text;
+            }
+            else
+            {
+                textBox1.Text = button7.Text;
+                label4.Text = "";
+                inputstatus = true;
+            } 
+        }
+
+        private void button8_Click(object sender, EventArgs e)  //6
+        {
+            if (inputstatus == true)
+            {
+                textBox1.Text += button8.Text;
+            }
+            else
+            {
+                textBox1.Text = button8.Text;
+                label4.Text = "";
+                inputstatus = true;
+            } 
+        }
+
+        private void button6_Click(object sender, EventArgs e)  //7
+        {
+            if (inputstatus == true)
+            {
+                textBox1.Text += button6.Text;
+            }
+            else
+            {
+                textBox1.Text = button6.Text;
+                label4.Text = "";
+                inputstatus = true;
+            } 
+        }
+
+        private void button4_Click(object sender, EventArgs e) //8
+        {
+            if (inputstatus == true)
+            {
+                textBox1.Text += button4.Text;
+            }
+            else
+            {
+                textBox1.Text = button4.Text;
+                label4.Text = "";
+                inputstatus = true;
+            } 
+        }
+
+        private void button5_Click(object sender, EventArgs e)  //9
+        {
+            if (inputstatus == true)
+            {
+                textBox1.Text += button5.Text;
+            }
+            else
+            {
+                textBox1.Text = button5.Text;
+                label4.Text = "";
+                inputstatus = true;
+            } 
+        }
+
+        private void button18_Click(object sender, EventArgs e)  //.
+        {
+            if (!textBox1.Text.Contains("."))
+            {
+                if (inputstatus == true)
+                {
+                    textBox1.Text += button18.Text;
+                }
+                else
+                {
+                    textBox1.Text = button18.Text;
+                    inputstatus = true;
+                }
+            }
+        }
+#endregion putting values
+
+        private void button16_Click(object sender, EventArgs e)  //더하기
+        {
+            if (value1.Equals('0')==false)
+            {
+                button11.PerformClick();  //operator acts like '=' button
+                inputstatus = true;
+                op = "+";
+                textBox1.Text = "";
+                label4.Text = value1 + " " + op;
+            }
+            else
+            {
+                value1 = textBox1.Text;
+                textBox1.Text = "";
+                op = "+"; //add in switch case 
+                label4.Text = value1 + " " + op;
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e) //빼기
+        {
+            if (value1.Equals('0') == false)
+            {
+                button11.PerformClick();  //operator acts like '=' button
+                inputstatus = true;
+                op = "-";
+                textBox1.Text = "";
+                label4.Text = value1 + " " + op;
+            }
+            else
+            {
+                value1 = textBox1.Text;
+                textBox1.Text = "";
+                op = "-"; //subtract
+                label4.Text = value1 + " " + op;
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)  //곱하기
+        {
+            if (value1.Equals('0') == false)
+            {
+                button11.PerformClick();  //operator acts like '=' button
+                inputstatus = true;
+                op = "*";
+                textBox1.Text = "";
+                label4.Text = value1 + " " + op;
+            }
+            else
+            {
+                value1 = textBox1.Text;
+                textBox1.Text = "";
+                op = "*"; //multiply
+                label4.Text = value1 + " " + op;
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)  //나누기
+        {
+            if (value1.Equals('0') == false)
+            {
+                button11.PerformClick();  //operator acts like '=' button
+                inputstatus = true;
+                op = "/";
+                textBox1.Text = "";
+                label4.Text = value1 + " " + op;
+            }
+            else
+            {
+                value1 = textBox1.Text;
+                textBox1.Text = "";
+                op = "/";  //divide
+                label4.Text = value1 + " " + op;
+            }
+        }
+
+        private void funcal()
+        {
+            switch (op)
+            {
+                case "+":
+                    textBox1.Text = Convert.ToString(Convert.ToDouble(value1) + Convert.ToDouble(textBox1.Text)); //adding values of textbox
+
+                    break;
+                case "-":
+                    textBox1.Text = Convert.ToString(Convert.ToDouble(value1) - Convert.ToDouble(textBox1.Text));
+
+                    break;
+                case "*":
+                    textBox1.Text = Convert.ToString(Convert.ToDouble(value1) * Convert.ToDouble(textBox1.Text));
+                    break;
+                case "/":
+                    if (textBox1.Text == "0")
+                    {
+                        textBox1.Text = "infinity";
+                    }
+                    else
+                    {
+                        textBox1.Text = Convert.ToString(Convert.ToDouble(value1) / Convert.ToDouble(textBox1.Text));
+                    }
+                    break;
+                case "^":
+                    textBox1.Text = Convert.ToString(System.Math.Pow(Convert.ToDouble(value1), Convert.ToDouble(textBox1.Text)));
+                    break;
+                case "%": textBox1.Text = Convert.ToString(Convert.ToDouble(value1) % Convert.ToDouble(textBox1.Text));
+                    break;
+                case "P": double varn, var2, var3; //variable declaration 
+                    varn = factorial(Convert.ToDouble(value1)); //calling factorial function 
+                    var2 = factorial(Convert.ToDouble(value1) - Convert.ToDouble(textBox1.Text));
+                    textBox1.Text = Convert.ToString(varn / var2); //storing or showing result of factorial variables
+                    break;
+                case "C":
+                    varn = factorial(Convert.ToDouble(value1));
+                    var2 = factorial(Convert.ToDouble(value1) - Convert.ToDouble(textBox1.Text));
+                    var3 = factorial(Convert.ToDouble(textBox1.Text));
+                    textBox1.Text = Convert.ToString(varn / (var3 * var2));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private double factorial(double x)
+        {
+            double i = 1; //initialization values of i to 1
+            for (double s = 1; s <= x; s++)
+            {
+                i = i * s;
+            }
+            return i;
+        }
+
+        private void button11_Click(object sender, EventArgs e)  //=
+        {
+            label4.Text = value1+" "+op+" "+textBox1.Text+" "+"=";
+            funcal();  //함수 호출
+            value1 = textBox1.Text;
+            op = "";
+            inputstatus = false;
+        }
+
+        private void button12_Click(object sender, EventArgs e)  //AC = all clear
+        {
+            textBox1.Enabled = true;
+            textBox1.Text = "";
+            textBox2.Enabled = true;
+            textBox2.Text = "";
+            label4.Text = "";
+        }
+
+        private void button33_Click(object sender, EventArgs e)  //x^2
+        {
+            value1 = textBox1.Text;
+            textBox1.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) * Convert.ToDouble(textBox1.Text));
+            inputstatus = false;
+            op = "^2";
+            label4.Text = value1 + " " + op + " " + "=";
+        }
+
+        private void button31_Click(object sender, EventArgs e)  //x^3
+        {
+            value1 = textBox1.Text;
+            textBox1.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) * Convert.ToDouble(textBox1.Text) * Convert.ToDouble(textBox1.Text));
+            inputstatus = false;
+            op = "^3";
+            label4.Text = value1 + " " + op + " " + "=";
+        }
+
+        private void button48_Click(object sender, EventArgs e)  //sqrt
+        {
+            value1 = textBox1.Text;
+            textBox1.Text = Convert.ToString(System.Math.Sqrt(Convert.ToDouble(textBox1.Text)));
+            inputstatus = false;
+            op = "sqrt";
+            label4.Text = op + " " + value1 + " " + "=";
+        }
+
+        private void button32_Click(object sender, EventArgs e)  //x^y
+        {
+            if (value1.Equals('0') == false)
+            {
+                button11.PerformClick();  //operator acts like '=' button
+                inputstatus = true;
+                op = "^";
+                textBox1.Text = "";
+                label4.Text = value1 + " " + op;
+            }
+            else
+            {
+                value1 = textBox1.Text;
+                textBox1.Text = "";
+                op = "^";
+                label4.Text = value1 + " " + op;
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e) //sin
+        {
+            value1 = textBox1.Text;
+            //if radian is selected 
+            if (radioButton1.Checked == true)
+            {
+                textBox1.Text = Convert.ToString(System.Math.Sin(Convert.ToDouble(textBox1.Text)));
+                inputstatus = false;
+            }
+            //if degree is selected 
+            else
+            {
+                textBox1.Text = Convert.ToString(System.Math.Sin((Convert.ToDouble(System.Math.PI) / 180) * (Convert.ToDouble(textBox1.Text))));
+                inputstatus = false;
+            }
+            op = "sin";
+            label4.Text = op + " " + value1 + " " + "=";
+        }
+
+        private void button22_Click(object sender, EventArgs e)  //cos
+        {
+            value1 = textBox1.Text;
+            //radian selected 
+            if (radioButton1.Checked == true)
+            {
+                textBox1.Text = Convert.ToString(System.Math.Cos(Convert.ToDouble(textBox1.Text)));
+                inputstatus = false;
+            }
+            //degree selected 
+            else
+            {
+                textBox1.Text = Convert.ToString(System.Math.Cos((Convert.ToDouble(System.Math.PI) / 180) * (Convert.ToDouble(textBox1.Text))));
+                inputstatus = false;
+            }
+            op = "cos";
+            label4.Text = op + " " + value1 + " " + "=";
+        }
+
+        private void button23_Click(object sender, EventArgs e)  //tan
+        {
+            value1 = textBox1.Text;
+            //radian selected 
+            if (radioButton1.Checked == true)
+            {
+                textBox1.Text = Convert.ToString(System.Math.Tan(Convert.ToDouble(textBox1.Text)));
+                inputstatus = false;
+            }
+            //degree selected 
+            else
+            {
+                textBox1.Text = Convert.ToString(System.Math.Tan((Convert.ToDouble(System.Math.PI) / 180) * (Convert.ToDouble(textBox1.Text))));
+                inputstatus = false;
+            }
+            op = "tan";
+            label4.Text = op + " " + value1 + " " + "=";
+        }
+
+        private void button29_Click(object sender, EventArgs e)  //1/x
+        {
+            value1 = textBox1.Text;
+            textBox1.Text = Convert.ToString(Convert.ToDouble(1.0 / Convert.ToDouble(textBox1.Text)));
+            inputstatus = false;
+            op = "1/";
+            label4.Text = op + " " + value1 + " " + "=";
+        }
+
+        private void button27_Click(object sender, EventArgs e)  //x!
+        {
+            value1 = textBox1.Text;
+            double var1 = 1;
+            for (double i = 1; i <= Convert.ToDouble(textBox1.Text); i++)
+            {
+                var1 = var1 * i;
+            }
+            textBox1.Text = Convert.ToString(var1);
+            inputstatus = false;
+            op = "!";
+            label4.Text = value1 + "" + op + " " + "=";
+        }
+
+        private void button47_Click(object sender, EventArgs e)  //log10 x
+        {
+            value1 = textBox1.Text;
+            textBox1.Text = Convert.ToString(System.Math.Log10(Convert.ToDouble(textBox1.Text)));
+            inputstatus = false;
+            op = "log";
+            label4.Text = op + " " + value1 + " " + "=";
+        }
+
+        private void button46_Click(object sender, EventArgs e)  //natural log
+        {
+            value1 = textBox1.Text;
+            textBox1.Text = Convert.ToString(System.Math.Log(Convert.ToDouble(textBox1.Text)));
+            inputstatus = false;
+            op = "natlog";
+            label4.Text = op + " " + value1 + " " + "=";
+        }
+
+        private void button10_Click(object sender, EventArgs e) //delete
+        {
+            value1 = textBox1.Text;
+            int n = value1.Length;
+            if(textBox1.Text.Length!=0){
+                textBox1.Text = (value1.Substring(0, n - 1));
+            }         
+        }
+
+        private void button28_Click(object sender, EventArgs e)  //%
+        {
+            if (value1.Equals('0') == false)
+            {
+                button11.PerformClick();  //operator acts like '=' button
+                inputstatus = true;
+                op = "%";
+                textBox1.Text = "";
+                label4.Text = value1 + " " + op;
+            }
+            else
+            {
+                value1 = textBox1.Text;
+                textBox1.Text = "";
+                op = "%";  //funccalc
+                label4.Text = value1 + " " + op;
+            }
+        }
+
+        private void button30_Click(object sender, EventArgs e)  // +/-
+        {
+            textBox1.Text = Convert.ToString(-Convert.ToDouble(textBox1.Text));
+            inputstatus = false; 
+        }
+
+        private void button21_Click(object sender, EventArgs e)  //sin-1 (inverse)
+        {
+            value1=textBox1.Text;
+            if (radioButton1.Checked == true)
+            {
+                textBox1.Text = Convert.ToString(System.Math.Asin(Convert.ToDouble(textBox1.Text)));
+                inputstatus = false;
+            }
+            else
+            {
+                textBox1.Text = Convert.ToString(System.Math.Asin((Convert.ToDouble(System.Math.PI) / 180) * (Convert.ToDouble(textBox1.Text))));
+                inputstatus = false;
+            }
+            op = "sin-1";
+            label4.Text = op + " " + value1 + " " + "=";
+        }
+
+        private void button19_Click(object sender, EventArgs e) //cos-1
+        {
+            value1=textBox1.Text;
+            if (radioButton1.Checked == true)
+            {
+                textBox1.Text = Convert.ToString(System.Math.Acos(Convert.ToDouble(textBox1.Text)));
+                inputstatus = false;
+            }
+            else
+            {
+                textBox1.Text = Convert.ToString(System.Math.Acos((Convert.ToDouble(System.Math.PI) / 180) * (Convert.ToDouble(textBox1.Text))));
+                inputstatus = false;
+            }
+            op = "cos-1";
+            label4.Text = op + " " + value1 + " " + "=";
+        }
+
+        private void button20_Click(object sender, EventArgs e)  //tan-1
+        {
+            value1=textBox1.Text;
+            if (radioButton1.Checked == true)
+            {
+                textBox1.Text = Convert.ToString(System.Math.Atan(Convert.ToDouble(textBox1.Text)));
+                inputstatus = false;
+            }
+            else
+            {
+                textBox1.Text = Convert.ToString(System.Math.Atan((Convert.ToDouble(System.Math.PI) / 180) * (Convert.ToDouble(textBox1.Text))));
+                inputstatus = false;
+            }
+            op = "tan-1";
+            label4.Text = op + " " + value1 + " " + "=";
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+         
+        private void button25_Click(object sender, EventArgs e)  //npr (permutation)
+        {
+            if (value1.Equals('0') == false)
+            {
+                button11.PerformClick();  //operator acts like '=' button
+                inputstatus = true;
+                op = "P";
+                textBox1.Text = "";
+                label4.Text = value1 + " " + op;
+            }
+            else
+            {
+                value1 = textBox1.Text;
+                textBox1.Text = "";
+                op = "P";
+                label4.Text = value1 + " " + op;
+            }
+        }
+
+        private void button26_Click(object sender, EventArgs e)  //ncr (combination)
+        {
+            if (value1.Equals('0') == false)
+            {
+                button11.PerformClick();  //operator acts like '=' button
+                inputstatus = true;
+                op = "C";
+                textBox1.Text = "";
+                label4.Text = value1 + " " + op;
+            }
+            else
+            {
+                value1 = textBox1.Text;
+                textBox1.Text = "";
+                op = "C";
+                label4.Text = value1 + " " + op;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void button50_Click(object sender, EventArgs e)  //파일불러오기
+        {
+            label5.Text = "";
+            StreamReader sr = new StreamReader(new FileStream("input.txt", FileMode.Open));
+            string a = null;
+            while(sr.EndOfStream==false)
+            {
+                a = sr.ReadLine();
+            }
+            textBox2.Text = a;
+        }
+
+        private void button49_Click(object sender, EventArgs e)  //결과저장
+        {
+            StreamWriter sw = new StreamWriter(new FileStream("output.txt", FileMode.Create));
+            sw.WriteLine("{0} {1}", label4.Text,textBox1.Text);
+            sw.Close();
+        }
+
+        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button37_Click(object sender, EventArgs e)  //M- (memory substract)
+        {
+            value1 = textBox1.Text;
+            MemoryStore -= Convert.ToDecimal(value1);
+            op = "M-";
+            label4.Text = op + " " + value1; 
+        }
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button39_Click(object sender, EventArgs e)  //M+ (memory add)
+        {
+            value1 = textBox1.Text;
+            MemoryStore += Convert.ToDecimal(value1);
+            op = "M+";
+            label4.Text = op + " "+value1; 
+        }
+
+        private void button41_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button43_Click(object sender, EventArgs e)  //MR (Memory recall)
+        {
+            textBox1.Text = MemoryStore.ToString();
+            inputstatus = false;
+            op = "MR";
+            label4.Text = op + "="; 
+        }
+
+        private void button45_Click(object sender, EventArgs e)  //MC (memory clear)
+        {
+            MemoryStore = 0;
+            inputstatus = false;
+            op = "MC";
+            label4.Text = op;
+        } 
+    }
+}

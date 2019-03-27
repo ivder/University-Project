@@ -1,0 +1,37 @@
+create database movie_db;
+
+use movie_db;
+
+CREATE TABLE IF NOT EXISTS `regform` (
+  `id` double NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `time` text NOT NULL,
+  `movie` text NOT NULL,
+  `seat` text NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+
+CREATE TABLE IF NOT EXISTS `userlist` (
+  `name` varchar(35) NOT NULL,
+  `password` text NOT NULL,
+  `email` text NOT NULL,
+  `rootkey` text NOT NULL,
+  `movie` text,
+  `time` text,
+  `seat` text,
+  `price` int,
+  PRIMARY KEY (`name`)
+);
+
+insert into userlist(name, password,email,rootkey,movie,time,seat,price) values('admin','1234','abc@a.com','1',null,null,null,null);
+
+
+CREATE TABLE IF NOT EXISTS `movielist` (
+  `id` double NOT NULL AUTO_INCREMENT,
+  `movie` text NOT NULL,
+  `duration` int NOT NULL,
+  `period` int NOT NULL,
+  `image` longblob,	
+  PRIMARY KEY (`id`)
+);
