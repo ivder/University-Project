@@ -1,0 +1,9 @@
+div {text-align:center;}
+#divBanner {font-size:50px; padding:20px}
+#divUser {padding:5px}
+#divMenu {background-color:royalblue; font-size:20px, padding:10px}
+#divMenu a {color:white; text-decoration:none;}
+#divMenu a:visited {color:white;}
+#divMenu a:hover {color:black; background-color:GoldenRod;}
+#divMenu a:active {color:black; background-color:GoldenRod;}
+#divContent {}

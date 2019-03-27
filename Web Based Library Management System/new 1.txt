@@ -1,0 +1,90 @@
+<html>
+<head>
+<%@ page import ="java.sql.*" %>
+<%@ page import ="javax.sql.*" %>
+<%@page contentType="text/html;charset=ks_c_5601-1987"%>
+<link rel="stylesheet" type="text/css" href="Index.css">
+<title>Books</title>
+</head>
+<body>
+
+<div id=divBanner>도서 관리</div>
+<div id=divContent>
+<table align=center cellpadding="10">
+<tr>
+<td> 
+<% Cookie ck[]=request.getCookies();
+ String name=ck[1].getValue();  
+ out.print("User: "+name);%></td>
+<td><a href="Logout.jsp">Logout</a></td>
+</tr></table>
+</div>
+
+<div id=divMenu>
+<table align=center cellpadding="5">
+<tr>
+<td><a href="BookSearch.jsp">도서검색</a></td>
+<td><a href="BookRegister.jsp">도서등록</a></td>
+</tr></table>
+</div>
+<div id=divContent>
+<h2>도서 검색 결과</h2><br>
+
+
+<%
+final int PAGE_SIZE=10;
+int MAX_PAGENO;
+int currentPageNo=0;
+
+try {
+Class.forName("com.mysql.jdbc.Driver");
+Connection DB=DriverManager.getConnection("jdbc:mysql://localhost:3306/Library_Servlet", "root", "1234");
+Statement sql=DB.createStatement();
+ResultSet cursor=sql.executeQuery("select count(*) from list");
+cursor.first();
+MAX_PAGENO=cursor.getInt(1) / PAGE_SIZE;
+cursor.close();
+DB.close();
+} catch (Exception e1) {}
+
+out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />");
+out.println("<table border=1 cellspacing=0 align=center>");
+String searchfield=request.getParameterValues("searchField")[0];
+String query=request.getParameterValues("query")[0];
+String loanoption=request.getParameterValues("loanOption")[0];
+out.println("<tr align=center bgcolor=lightgrey><td>고유번호</td><td>서명</td><td>조자</td><td>출판년도</td><td>출판사</td><td>처리</td><tr>");
+try {
+Class.forName("com.mysql.jdbc.Driver");
+Connection DB=DriverManager.getConnection("jdbc:mysql://localhost:3306/Library_Servlet", "root", "1234");
+Statement sql=DB.createStatement(); 
+if(query==""){
+ResultSet cursor=sql.executeQuery("select * from list limit"+currentPageNo*PAGE_SIZE+", "+PAGE_SIZE);
+while(cursor.next()){
+	out.println("<tr align=center>");
+	out.println("<td>"+cursor.getInt("number")+"</td><td>"+cursor.getString("title")+"</td><td>"+cursor.getString("author")+"</td><td>"+cursor.getString("year")+"</td><td>"+cursor.getString("publisher")+"</td>");
+	if (cursor.getInt("status")==0) {
+		out.println("<td>대출</td>");
+	}
+	else out.println("<td>반납</td>");
+	out.println("</tr>");
+}
+}else{
+	ResultSet select=sql.executeQuery("select * from list where "+searchfield+"='"+query+"' limit "+currentPageNo*PAGE_SIZE+", "+PAGE_SIZE);
+	while (select.next()){
+		out.println("<tr align=center>");
+		out.println("<td>"+select.getInt("number")+"</td><td>"+select.getString("title")+"</td><td>"+select.getString("author")+"</td><td>"+select.getString("year")+"</td><td>"+select.getString("publisher")+"</td>");
+		if(select.getInt("status")==0){
+			out.println("<td>대출</td>");
+		}
+		else out.println("<td>반납</td>");
+		out.println("</tr>");	
+	}	
+}
+
+
+} catch (Exception e) { out.println(e.getMessage()); }
+out.println("</table>");
+%>
+</div>
+</body>
+</html>
