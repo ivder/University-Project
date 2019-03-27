@@ -1,0 +1,87 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes 
+Relation:     movie_review
+Instances:    2000
+Attributes:   7
+              positive
+              negative
+              firstpos
+              firstneg
+              endpos
+              endneg
+              result
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                 Class
+Attribute          pos     neg
+                 (0.5)   (0.5)
+===============================
+positive
+  mean          45.8182 36.1293
+  std. dev.     18.7515 14.2881
+  weight sum       1000    1000
+  precision      1.6162  1.6162
+
+negative
+  mean          32.1802 33.6863
+  std. dev.     15.6133 14.3295
+  weight sum       1000    1000
+  precision      1.3222  1.3222
+
+firstpos
+  mean           1.6509   1.666
+  std. dev.      1.8798  1.8658
+  weight sum       1000    1000
+  precision      1.0769  1.0769
+
+firstneg
+  mean             1.18   1.387
+  std. dev.      1.4871  1.6874
+  weight sum       1000    1000
+  precision           1       1
+
+endpos
+  mean           2.4026  1.7285
+  std. dev.      2.3539  1.9843
+  weight sum       1000    1000
+  precision      1.0769  1.0769
+
+endneg
+  mean            0.903   1.109
+  std. dev.      1.3385   1.455
+  weight sum       1000    1000
+  precision           1       1
+
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1245               62.25   %
+Incorrectly Classified Instances       755               37.75   %
+Kappa statistic                          0.245 
+Mean absolute error                      0.4381
+Root mean squared error                  0.4796
+Relative absolute error                 87.6192 %
+Root relative squared error             95.9291 %
+Total Number of Instances             2000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.497    0.252    0.664      0.497    0.568      0.253    0.674     0.681     pos
+                 0.748    0.503    0.598      0.748    0.665      0.253    0.674     0.644     neg
+Weighted Avg.    0.623    0.378    0.631      0.623    0.616      0.253    0.674     0.662     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 497 503 |   a = pos
+ 252 748 |   b = neg
