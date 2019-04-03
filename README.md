@@ -30,6 +30,7 @@ used to recognize the new inputted simple alphanumeric pattern.
 
 ![](https://i.ibb.co/njJQKh3/image.png)
 
+
 ## Face Recognition using Hopfield Network Algorithm
 
 **Programming Language : C++**
@@ -64,6 +65,7 @@ As we can see the ImageOutput window shows the same result as the ImageInput
 window, which mean the face of the person is successfully recognized.
 
 ![](https://i.ibb.co/TMnNkqH/image.png)
+
 
 ## Movie Review Sentiment Analyzer
 
@@ -118,6 +120,7 @@ best performance among those 3 sets of features, precision, recall, and
 **f-measure** score are calculated and compared.
 
 ![](https://i.ibb.co/BVJF0T3/image.png)
+
 
 ## Citation Purpose and Sentiment Analyzer
 
@@ -180,7 +183,8 @@ produce new positive and negative clues.
 To choose the best performance among those 3 sets of features, precision,
 recall, and **f-measure** score are calculated and compared.
 
-**Library Management System (Web Based)**
+
+## Library Management System (Web Based)
 
 **Languages : Java, JSP, HTML, CSS**
 
@@ -211,6 +215,7 @@ This project is done in Korean, so all the writing will be in Korean word.
 
 ![](https://i.ibb.co/WgqF76S/image.png)
 
+
 ## Business Card Management System
 
 **Languages : Java, JSP, HTML, CSS**
@@ -225,6 +230,7 @@ email and address could be clicked and direct you to corresponding application
 such as google map, Gmail, and call menu on smartphone or Microsoft outlook.
 
 ![](https://i.ibb.co/wpgH9m1/image.png)
+
 
 ## Library Management System (Window Builder Based)
 
@@ -261,6 +267,7 @@ Several features that included in this website are:
 
 ![](https://i.ibb.co/zs63SCd/image.png)
 
+
 ## Movie Ticketing System
 
 **Programming Language : Java**
@@ -285,6 +292,7 @@ project consists several features:
 
 ![](https://i.ibb.co/JrrSnyq/image.png)
 
+
 ## Scientific Calculator
 
 **Programming Language : C\#**
@@ -300,6 +308,7 @@ from outer file and save the both of the input and the result to outer file.
 ![EMB00001f400eb6](https://i.ibb.co/wQS4fxh/image.png)
 
 ![EMB00001f400ebc](https://i.ibb.co/HdK0N0y/image.png)
+
 
 ## Computer Graphics : Gravity Simulator
 
@@ -331,6 +340,7 @@ can see how the small particles fly across the screen that caused by the
 gravitational force.
 
 ![](https://i.ibb.co/2SnnJ9D/image.png)
+
 
 ## Microprocessor : Electronic Door Lock
 
