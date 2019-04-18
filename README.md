@@ -1,7 +1,7 @@
 # University-Project
 Collection of my programming project during my studies at university.
 Most of the uploaded projects here in github are not complete because of limited storage.
-Full version, download from this link : https://drive.google.com/open?id=1OGZSbOsQTCgpixEvV5fbJzrTw6SRRu1T <Br>
+Full version, download from this .[google drive link]. (https://drive.google.com/open?id=1OGZSbOsQTCgpixEvV5fbJzrTw6SRRu1T) <Br>
 
 **Artificial Intelligence**
 - [Alphanumeric Recognition using Perceptron Algorithm](https://github.com/ivder/University-Project/tree/master/Alphanumeric%20Recognition%20using%20Perceptron%20Algorithm)
