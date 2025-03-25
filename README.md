@@ -1,26 +1,24 @@
 # University-Project
-Collection of my programming project during my studies at university.
-Most of the uploaded projects here in github are not complete because of limited storage.
-Full version, download from this [google drive link](https://drive.google.com/open?id=1OGZSbOsQTCgpixEvV5fbJzrTw6SRRu1T) <Br>
+Collection of my programming project during my studies at university. For project source code, please contact me. <Br>
 
 **Artificial Intelligence**
-- [Alphanumeric Recognition using Perceptron Algorithm](https://github.com/ivder/University-Project/tree/master/Alphanumeric%20Recognition%20using%20Perceptron%20Algorithm)
-- [Face Recognition using Hopfield Network Algorithm](https://github.com/ivder/University-Project/tree/master/Face%20Recognition%20using%20Hopfield%20Network%20Algorithm)
-- [Movie Review Sentiment Analyzer](https://github.com/ivder/University-Project/tree/master/Movie%20Review%20Sentiment%20Analyzer)
-- [Citation Sentiment&Purpose Analyzer](https://github.com/ivder/University-Project/tree/master/Citation%20Sentiment_Purpose%20Analyzer)
+- Alphanumeric Recognition using Perceptron Algorithm
+- Face Recognition using Hopfield Network Algorithm
+- Movie Review Sentiment Analyzer
+- Citation Sentiment&Purpose Analyzer
 
 **Web Development**
-- [Library Management System (Web Based)](https://github.com/ivder/University-Project/tree/master/Web%20Based%20Library%20Management%20System)
-- [Business Card Management System](https://github.com/ivder/University-Project/tree/master/Web%20Based%20Business%20Card%20Management%20System)
+- Library Management System (Web Based)
+- Business Card Management System
 
 **Application Program**
-- [Library Management System (Window Builder Based)](https://github.com/ivder/University-Project/tree/master/Window%20Builder%20Based%20Library%20Management%20System)
-- [Movie Ticketing System](https://github.com/ivder/University-Project/tree/master/Movie%20Ticketing%20System)
-- [Scientific Calculator](https://github.com/ivder/University-Project/tree/master/Scientific%20Calculator)
-- [Computer Graphics : Gravity Simulator](https://github.com/ivder/University-Project/tree/master/Computer%20Graphics_Gravity%20Simulator)
+- Library Management System (Window Builder Based)
+- Movie Ticketing System
+- Scientific Calculator
+- Computer Graphics : Gravity Simulator
 
 **Hardware**
-- [Microprocessor : Electronic Door Lock](https://github.com/ivder/University-Project/tree/master/Microprocessor_Electronic%20Door%20Lock)
+- Microprocessor : Electronic Door Lock
 
 
 ## Alphanumeric Recognition using Perceptron (Single Layer Neural Network)
