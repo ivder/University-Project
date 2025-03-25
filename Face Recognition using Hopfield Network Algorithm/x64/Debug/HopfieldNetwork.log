@@ -1,4 +1,0 @@
-﻿  HopfieldNetwork.cpp
-c:\users\ivan\documents\visual studio 2015\projects\hopfieldnetwork\hopfieldnetwork.cpp(62): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  HopfieldNetwork.vcxproj -> C:\Users\Ivan\documents\visual studio 2015\Projects\HopfieldNetwork\x64\Debug\HopfieldNetwork.exe
-  HopfieldNetwork.vcxproj -> C:\Users\Ivan\documents\visual studio 2015\Projects\HopfieldNetwork\x64\Debug\HopfieldNetwork.pdb (Partial PDB)
